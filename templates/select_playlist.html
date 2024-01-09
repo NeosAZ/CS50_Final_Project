@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    select_playlisy
+{% endblock %}
+
+{% block main %}
+    <div class = body>
+        <h1 class = heading> Select playlist</h1>
+        <form action="/select_playlist" method="post">
+            <select class = action name="action">
+                <option value = "action" disabled> Select Actions </option>
+                <option value = "move"> Move Songs</option>
+                <option value = "remove"> Remove Songs</option>
+            </select> 
+            <table>
+                <tr>
+                    <td><button type="submit" name= playlist value = liked> Liked Songs </button></td>
+                </tr>
+                {%for rows in index%}
+                <tr>
+                    <td><button type=submit name = playlist value ="{{rows.id}}">{{rows["name"]}}</button></td>
+                </tr>
+            {% endfor %}
+            </table>
+        </form>
+    </div>
+
+{% endblock %}

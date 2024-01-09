@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    EDIT
+{% endblock %}
+
+{% block main %}
+    <div class = body>
+        <h1 class = heading> Edit playlist</h1>
+        <form action="/edit_playlist" method="post">
+            {% if session["current_action"] == "move" %}
+                <p> move</p>
+                <select class = action name="moved_playlist">
+                    <option value = liked> Liked</option>
+                    {%for rows in playlist%}
+                    <option value = "{{rows.id}}"> {{rows["name"]}}</option>
+                    {% endfor %}
+                </select>
+            {% else %}
+                <p> remove </p>
+            {% endif %}
+            <button type = submit> Submit </button>
+            <table>
+            {%for rows in index%}
+            <tr>
+                <td>{{rows["name"]}}</td>
+                <td><input type="checkbox" name = song_name value ="{{rows.id}}"></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </form>
+    </div>
+
+{% endblock %}
