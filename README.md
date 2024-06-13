@@ -4,7 +4,7 @@ My App is a simple uses the spotify API to allow users to remove or move multipl
 
 My project is built on the spotify API and flask and in order to use the API we need a client ID and client secret which is specific to each individual spotify API project. I utilize the helpers.py file to access the ID and scret stored in an .env file.
 
-The Template folder is filled with templates which includes the remove, move, login, and selection page.
+The Template folder is filled with page templates which includes the remove, move, login, and selection page.
 
 App.py include my main functions and the endpoints for each of my actions. It also include the function on how to login with the users spotify account.
 
@@ -63,7 +63,7 @@ This is version 1
 
 ## Authors
 
-Haifeng ZHeng
+Haifeng Zheng
 
 
 ## License
